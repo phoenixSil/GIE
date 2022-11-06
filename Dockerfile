@@ -4,7 +4,6 @@ WORKDIR /app
 FROM mcr.microsoft.com/dotnet/sdk:6.0
 WORKDIR /src
 COPY ["Gie.Api/Gie.Api.csproj", "Gie.Api/"]
-COPY "nuget.config" "Gie.Api/nuget.config"
 RUN dotnet restore "Gie.Api/Gie.Api.csproj"
 
 COPY "Gie.Api/" "Gie.Api/"
