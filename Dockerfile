@@ -1,13 +1,18 @@
-FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build-env
+FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS base
 WORKDIR /app
 
-COPY *.csproj ./
-RUN dotnet restore
+FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
+WORKDIR /src
+COPY ["Gie.Api/Gie.Api.csproj", "Gie.Api/"]
+RUN dotnet restore "Gie.Api/Gie.Api.csproj"
+COPY . .
+WORKDIR "/src/Gie.Api"
+RUN dotnet build "Gie.Api.csproj" -c Release -o /app/build
 
-COPY . ./
-RUN dotnet publish -c Release -o out
+FROM build AS publish
+RUN dotnet publish "Gie.Api.csproj" -c Release -o /app/publish /p:UseAppHost=false
 
-FROM mcr.microsoft.com/dotnet/aspnet:6.0
+FROM base AS final
 WORKDIR /app
-COPY --from=build-env /app/out .
-ENTRYPOINT [ "dotnet", "gie.dll"]
+COPY --from=publish /app/publish .
+ENTRYPOINT ["dotnet", "Gie.Api.dll"]

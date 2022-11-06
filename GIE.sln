@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32929.385
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gie.Api", "Gie.Api\Gie.Api.csproj", "{71579622-BBE9-4FDA-A21C-DD6B27D5D908}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gie.Test", "Gie.Test\Gie.Test.csproj", "{A0902013-C070-4EA4-B940-A1DD9062F334}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{71579622-BBE9-4FDA-A21C-DD6B27D5D908}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71579622-BBE9-4FDA-A21C-DD6B27D5D908}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71579622-BBE9-4FDA-A21C-DD6B27D5D908}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71579622-BBE9-4FDA-A21C-DD6B27D5D908}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0902013-C070-4EA4-B940-A1DD9062F334}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0902013-C070-4EA4-B940-A1DD9062F334}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0902013-C070-4EA4-B940-A1DD9062F334}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0902013-C070-4EA4-B940-A1DD9062F334}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {72BE70B1-6CD6-4C54-8C7D-E5015A6D6591}
+	EndGlobalSection
+EndGlobal
