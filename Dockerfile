@@ -2,7 +2,7 @@ FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build-env
 WORKDIR /app
 
 COPY ["Gie.Api/Gie.Api.csproj", "Gie.Api/"]
-RUN dotnet restore
+RUN dotnet restore "Gie.Api/Gie.Api.csproj"
 
 COPY ["Gie.Api/Gie.Api.csproj", "Gie.Api/"]
 RUN dotnet publish -c Release -o out
