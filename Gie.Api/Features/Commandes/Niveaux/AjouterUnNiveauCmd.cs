@@ -1,0 +1,11 @@
+﻿using Gie.Api.Dtos.Config.Niveaux;
+using MediatR;
+using MsCommun.Reponses;
+
+namespace Gesc.Api.Features.Commandes.Niveaux
+{
+    public class AjouterUnNiveauCmd : IRequest<ReponseDeRequette>
+    {
+        public NiveauGieACreerDto NiveauAAjouterDto { get; set; }
+    }
+}
