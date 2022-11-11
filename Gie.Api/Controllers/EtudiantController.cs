@@ -1,15 +1,65 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Gie.Api.Dtos.Etudiants;
+using MsCommun.Reponses;
+using Gie.Api.Services.Contrats;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Gie.Api.Controllers
 {
-    [ApiController]
     [Route("api/[controller]")]
+    [ApiController]
     public class EtudiantController : ControllerBase
     {
-        
+        private readonly IServiceDetudiant _service;
+
+        public EtudiantController(IServiceDetudiant service)
+        {
+            _service = service;
+        }
+
+        [HttpPost]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public async Task<ActionResult<ReponseDeRequette>> AjouterUnEtudiant(EtudiantACreerDto etudiantAAjouterDto)
+        {
+            var result = await _service.AjouterUnEtudiant(etudiantAAjouterDto);
+            return Ok(result);
+        }
+
+        [HttpGet]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<ActionResult<List<EtudiantDto>>> LireTousLesEtudiants()
+        {
+            var result = await _service.LireTousLesEtudiants();
+
+            if (result == null || result.Count == 0)
+                return NoContent();
+
+            return Ok(result);
+        }
+
+        [HttpGet("{id}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<ActionResult<EtudiantDto>> LireUnEtudiant(Guid id)
+        {
+            var result = await _service.LireDetailDunEtudiant(id);
+
+            if (result == null)
+                return NotFound();
+
+            return Ok(result);
+        }
+
+        [HttpPut("{id}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<ActionResult<ReponseDeRequette>> ModifierUnEtudiant(Guid etudiantId, EtudiantAModifierDto etudiantAModifierDto)
+        {
+            var resultat = await _service.ModifierUnEtudiant(etudiantId, etudiantAModifierDto);
+            return Ok(resultat);
+        }
     }
 }
