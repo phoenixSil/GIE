@@ -1,4 +1,4 @@
-﻿using Gie.Api.Modeles;
+﻿using Gie.Domain.Modeles;
 using Gie.Api.Dtos;
 using Gie.Api.Dtos.Etudiants;
 

@@ -1,6 +1,6 @@
 ﻿using MediatR;
 using Gie.Api.Dtos.Adresses;
-using Gie.Api.Modeles;
+using Gie.Domain.Modeles;
 using MsCommun.Reponses;
 
 namespace Gie.Api.Features.Commandes.Adresses

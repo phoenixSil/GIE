@@ -2,7 +2,7 @@
 using Gesc.Api.Features.Commandes.Niveaux;
 using Gie.Api.Repertoires.Contrats;
 using MsCommun.Reponses;
-using Gie.Api.Modeles;
+using Gie.Domain.Modeles;
 using MsCommun.Exceptions;
 
 namespace Gesc.Api.Features.CommandHandlers.Niveaux

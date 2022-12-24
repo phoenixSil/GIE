@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using MediatR;
 using MsCommun.Exceptions;
-using Gie.Api.Modeles;
+using Gie.Domain.Modeles;
 using Gie.Api.Repertoires;
 using Gie.Api.Repertoires.Contrats;
 using MsCommun.Reponses;

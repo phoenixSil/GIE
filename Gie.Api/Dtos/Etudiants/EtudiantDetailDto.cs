@@ -1,7 +1,7 @@
-﻿using Gie.Api.Modeles.Utils;
+﻿using Gie.Domain.Modeles.Utils;
 using Gie.Api.Dtos.Adresses;
 using System.ComponentModel.DataAnnotations.Schema;
-using Gie.Api.Modeles;
+using Gie.Domain.Modeles;
 using Gie.Api.Dtos.Config.Niveaux;
 
 namespace Gie.Api.Dtos.Etudiants

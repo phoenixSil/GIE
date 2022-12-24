@@ -1,5 +1,5 @@
 ﻿using Gie.Api.Datas;
-using Gie.Api.Modeles;
+using Gie.Domain.Modeles;
 using Gie.Api.Repertoires.Contrats;
 using Microsoft.EntityFrameworkCore;
 using MsCommun.Repertoires;

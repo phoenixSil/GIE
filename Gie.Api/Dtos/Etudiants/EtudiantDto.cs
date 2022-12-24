@@ -1,5 +1,5 @@
-﻿using Gie.Api.Modeles;
-using Gie.Api.Modeles.Utils;
+﻿using Gie.Domain.Modeles;
+using Gie.Domain.Modeles.Utils;
 
 namespace Gie.Api.Dtos.Etudiants
 {

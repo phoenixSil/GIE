@@ -1,4 +1,4 @@
-﻿namespace Gie.Api.Modeles.Utils
+﻿namespace Gie.Domain.Modeles.Utils
 {
     public enum NIVEAU_ETUDE
     {

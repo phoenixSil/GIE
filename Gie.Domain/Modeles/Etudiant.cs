@@ -1,7 +1,7 @@
-﻿using Gie.Api.Modeles.Utils;
+﻿using Gie.Domain.Modeles.Utils;
 using System.ComponentModel.DataAnnotations;
 
-namespace Gie.Api.Modeles
+namespace Gie.Domain.Modeles
 {
     public class Etudiant: BaseEntite
     {

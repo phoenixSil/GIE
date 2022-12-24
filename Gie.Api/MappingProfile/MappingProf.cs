@@ -3,7 +3,7 @@ using Gie.Api.Dtos.Adresses;
 using Gie.Api.Dtos.Config.Niveaux;
 using Gie.Api.Dtos.Etudiants;
 using Gie.Api.DTOs.Adresses;
-using Gie.Api.Modeles;
+using Gie.Domain.Modeles;
 using MsCommun.Messages.Niveaux;
 using Register.API.DTOs.Adresses;
 using Register.API.DTOs.Etudiants;

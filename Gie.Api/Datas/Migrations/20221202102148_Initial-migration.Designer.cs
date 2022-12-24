@@ -24,7 +24,7 @@ namespace Gie.Api.Datas.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("Gie.Api.Modeles.Adresse", b =>
+            modelBuilder.Entity("Gie.Domain.Modeles.Adresse", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -65,7 +65,7 @@ namespace Gie.Api.Datas.Migrations
                     b.ToTable("Adresses");
                 });
 
-            modelBuilder.Entity("Gie.Api.Modeles.Etudiant", b =>
+            modelBuilder.Entity("Gie.Domain.Modeles.Etudiant", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -104,7 +104,7 @@ namespace Gie.Api.Datas.Migrations
                     b.ToTable("Etudiants");
                 });
 
-            modelBuilder.Entity("Gie.Api.Modeles.Niveau", b =>
+            modelBuilder.Entity("Gie.Domain.Modeles.Niveau", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -139,9 +139,9 @@ namespace Gie.Api.Datas.Migrations
                     b.ToTable("Niveaux");
                 });
 
-            modelBuilder.Entity("Gie.Api.Modeles.Adresse", b =>
+            modelBuilder.Entity("Gie.Domain.Modeles.Adresse", b =>
                 {
-                    b.HasOne("Gie.Api.Modeles.Etudiant", "Etudiant")
+                    b.HasOne("Gie.Domain.Modeles.Etudiant", "Etudiant")
                         .WithMany("Adresses")
                         .HasForeignKey("EtudiantId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -150,9 +150,9 @@ namespace Gie.Api.Datas.Migrations
                     b.Navigation("Etudiant");
                 });
 
-            modelBuilder.Entity("Gie.Api.Modeles.Etudiant", b =>
+            modelBuilder.Entity("Gie.Domain.Modeles.Etudiant", b =>
                 {
-                    b.HasOne("Gie.Api.Modeles.Niveau", "Niveau")
+                    b.HasOne("Gie.Domain.Modeles.Niveau", "Niveau")
                         .WithMany("Etudiants")
                         .HasForeignKey("NiveauId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -161,12 +161,12 @@ namespace Gie.Api.Datas.Migrations
                     b.Navigation("Niveau");
                 });
 
-            modelBuilder.Entity("Gie.Api.Modeles.Etudiant", b =>
+            modelBuilder.Entity("Gie.Domain.Modeles.Etudiant", b =>
                 {
                     b.Navigation("Adresses");
                 });
 
-            modelBuilder.Entity("Gie.Api.Modeles.Niveau", b =>
+            modelBuilder.Entity("Gie.Domain.Modeles.Niveau", b =>
                 {
                     b.Navigation("Etudiants");
                 });

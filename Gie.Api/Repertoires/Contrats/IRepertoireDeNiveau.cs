@@ -1,4 +1,4 @@
-﻿using Gie.Api.Modeles;
+﻿using Gie.Domain.Modeles;
 using MsCommun.Repertoires.Contrats;
 
 namespace Gie.Api.Repertoires.Contrats

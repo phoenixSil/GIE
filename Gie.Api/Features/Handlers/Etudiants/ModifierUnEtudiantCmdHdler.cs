@@ -5,7 +5,7 @@ using Register.API.DTOs.Etudiants;
 using Register.API.DTOs.Etudiants.Validations;
 using MsCommun.Exceptions;
 using Register.API.Features.Commandes.Etudiants;
-using Gie.Api.Modeles;
+using Gie.Domain.Modeles;
 using Gie.Api.Repertoires.Contrats;
 using MsCommun.Reponses;
 

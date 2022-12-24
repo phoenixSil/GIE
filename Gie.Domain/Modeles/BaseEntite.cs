@@ -1,4 +1,4 @@
-﻿namespace Gie.Api.Modeles
+﻿namespace Gie.Domain.Modeles
 {
     public class BaseEntite
     {

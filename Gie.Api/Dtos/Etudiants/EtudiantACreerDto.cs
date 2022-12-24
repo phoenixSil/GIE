@@ -1,6 +1,6 @@
 ﻿using Gie.Api.Dtos.Adresses;
 using System.ComponentModel.DataAnnotations;
-using Gie.Api.Modeles.Utils;
+using Gie.Domain.Modeles.Utils;
 
 namespace Gie.Api.Dtos.Etudiants
 {

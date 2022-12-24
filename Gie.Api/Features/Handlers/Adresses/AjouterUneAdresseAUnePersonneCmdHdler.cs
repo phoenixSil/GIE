@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using MediatR;
 using Register.API.DTOs.Adresses.Validations;
-using Gie.Api.Modeles;
+using Gie.Domain.Modeles;
 using Gie.Api.Repertoires.Contrats;
 using MsCommun.Reponses;
 using Gie.Api.Features.Commandes.Adresses;

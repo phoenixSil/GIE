@@ -2,7 +2,7 @@
 using MediatR;
 using Register.API.DTOs.Adresses;
 using MsCommun.Exceptions;
-using Gie.Api.Modeles;
+using Gie.Domain.Modeles;
 using Gie.Api.Repertoires.Contrats;
 using Gie.Api.Core.Commandes.Adresses;
 using Gie.Api.Dtos.Adresses;

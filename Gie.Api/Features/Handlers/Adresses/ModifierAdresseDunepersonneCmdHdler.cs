@@ -2,7 +2,7 @@
 using MediatR;
 using Register.API.DTOs.Adresses.Validations;
 using MsCommun.Exceptions;
-using Gie.Api.Modeles;
+using Gie.Domain.Modeles;
 using Gie.Api.Repertoires;
 using Gie.Api.Repertoires.Contrats;
 using MsCommun.Reponses;

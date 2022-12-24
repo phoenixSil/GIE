@@ -2,7 +2,7 @@
 using MediatR;
 using Register.API.DTOs.Etudiants.Validations;
 using Register.API.Features.Commandes.Etudiants;
-using Gie.Api.Modeles;
+using Gie.Domain.Modeles;
 using Gie.Api.Repertoires.Contrats;
 using MsCommun.Reponses;
 

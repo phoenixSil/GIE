@@ -1,4 +1,4 @@
-﻿using Gie.Api.Modeles;
+﻿using Gie.Domain.Modeles;
 using Microsoft.EntityFrameworkCore;
 
 namespace Gie.Api.Datas

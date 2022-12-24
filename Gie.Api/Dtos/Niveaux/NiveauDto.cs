@@ -1,6 +1,6 @@
-﻿using Gie.Api.Modeles;
+﻿using Gie.Domain.Modeles;
 using Gie.Api.Dtos;
-using Gie.Api.Modeles;
+using Gie.Domain.Modeles;
 
 namespace Gie.Api.Dtos.Config.Niveaux
 {
