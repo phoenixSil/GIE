@@ -21,7 +21,6 @@ namespace Gie.Api.Datas
                     entry.Entity.DateCreation = DateTime.Now;
                     entry.Entity.DateInscription = DateTime.Now;
                 }
-                    
             }
             return base.SaveChangesAsync(acceptAllChangesOnSuccess, cancellationToken);
         }
