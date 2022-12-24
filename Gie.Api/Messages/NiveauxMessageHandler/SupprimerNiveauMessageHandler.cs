@@ -22,6 +22,7 @@ namespace Gie.Api.Messages.NiveauxMessageHandler
         public async Task Consume(ConsumeContext<NiveauASupprimerMessage> context)
         {
             _logger.LogInformation("On vas entamer la suppresion dun Niveau A Partir du message recu du Bus ");
+            
             var niveauMessage = context.Message;
             if (niveauMessage.Service == DesignationService.SERVICE_GESC)
             {

@@ -24,6 +24,7 @@ namespace Gie.Api.Messages.NiveauxMessageHandler
         public async Task Consume(ConsumeContext<NiveauAModifierMessage> context)
         {
             var niveauMessage = context.Message;
+            
             if (niveauMessage.Service == DesignationService.SERVICE_GESC)
             {
                 if (niveauMessage.Type == TypeMessage.MODIFICATION)
