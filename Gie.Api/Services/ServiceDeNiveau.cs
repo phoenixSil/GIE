@@ -14,7 +14,7 @@ namespace Gie.Api.Services
             _mediator = mediator;
         }
 
-        public async Task<ReponseDeRequette> AjouterUnNiveau(NiveauGieACreerDto etudiantAAjouter)
+        public async Task<ReponseDeRequette> AjouterUnNiveau(NiveauACreerDto etudiantAAjouter)
         {
             var resultatAjoutNiveau = await _mediator.Send(new AjouterUnNiveauCmd { NiveauAAjouterDto = etudiantAAjouter });
             return resultatAjoutNiveau;
@@ -40,9 +40,14 @@ namespace Gie.Api.Services
 
         public async Task<ReponseDeRequette> ModifierUnNiveau(Guid etudiantId, NiveauAModifierDto etudiantAModifier)
         {
-
             var resultatNiveauAModifier = await _mediator.Send(new ModifierUnNiveauCmd { NiveauAModifierDto = etudiantAModifier });
             return resultatNiveauAModifier;
+        }
+
+        public async Task<NiveauDetailDto> LireNiveauParNumeroExterne(Guid numeroExterne)
+        {
+            var etudiant = await _mediator.Send(new LireDetailDUnNiveauCmd { NumeroExterne = numeroExterne });
+            return etudiant;
         }
     }
 }

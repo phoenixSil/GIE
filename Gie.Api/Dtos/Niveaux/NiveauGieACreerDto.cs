@@ -2,7 +2,7 @@
 
 namespace Gie.Api.Dtos.Config.Niveaux
 {
-    public class NiveauGieACreerDto : INiveauDto
+    public class NiveauACreerDto : INiveauDto
     {
         [Required]
         public int ValeurCycle { get; set; }

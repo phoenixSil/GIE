@@ -6,6 +6,6 @@ namespace Gesc.Api.Features.Commandes.Niveaux
 {
     public class AjouterUnNiveauCmd : IRequest<ReponseDeRequette>
     {
-        public NiveauGieACreerDto NiveauAAjouterDto { get; set; }
+        public NiveauACreerDto NiveauAAjouterDto { get; set; }
     }
 }

@@ -34,9 +34,6 @@ namespace Gesc.Api.Features.CommandHandlers.Niveaux
                 {
                     response.Success = true;
                     response.Message = $"l'niveau d'Id [{request.Id}] a ete supprimer avec success ";
-
-                    // on supprime la personne associer a cet niveau 
-                    await _mediator.Send(new SupprimerUnNiveauCmd { Id = niveau.Id }, cancellationToken).ConfigureAwait(false);
                 }
                 else
                 {

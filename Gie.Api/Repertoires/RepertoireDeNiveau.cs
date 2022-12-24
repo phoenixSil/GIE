@@ -19,5 +19,13 @@ namespace Gie.Api.Repertoires
         {
             return await _context.Niveaux.AnyAsync(p => p.NumeroExterne.CompareTo(numeroExterne) == 0);
         }
+
+        public async Task<Niveau> LireParNumeroExterne(Guid numeroExterne)
+        {
+            var niveau = await _context.Niveaux
+                    .SingleOrDefaultAsync(niv => niv.NumeroExterne == numeroExterne);
+
+            return niveau;
+        }
     }
 }

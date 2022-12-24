@@ -24,7 +24,7 @@ namespace Gesc.Api.Features.CommandHandlers.Niveaux
             var validateur = new ValidateurDeLaCreationDeNiveauDto();
             var resultatValidation = await validateur.ValidateAsync(request.NiveauAAjouterDto, cancellationToken);
 
-            if(! await _pointDaccess.RepertoireDeNiveau.ExistsByExternalId(request.NiveauAAjouterDto.NumeroExterne))
+            if(await _pointDaccess.RepertoireDeNiveau.ExistsByExternalId(request.NiveauAAjouterDto.NumeroExterne))
             {
                 reponse.Success = true;
                 reponse.Message = "le Niveaux Existe Deja";

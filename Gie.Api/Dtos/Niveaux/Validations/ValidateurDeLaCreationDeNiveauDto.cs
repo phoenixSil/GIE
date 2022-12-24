@@ -5,7 +5,7 @@ using Gie.Api.Repertoires.Contrats;
 
 namespace Gie.Api.Dtos.Niveaus.Validations
 {
-    public class ValidateurDeLaCreationDeNiveauDto : AbstractValidator<NiveauGieACreerDto>
+    public class ValidateurDeLaCreationDeNiveauDto : AbstractValidator<NiveauACreerDto>
     {
 
         public ValidateurDeLaCreationDeNiveauDto()

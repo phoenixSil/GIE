@@ -5,6 +5,7 @@ namespace Gesc.Api.Features.Commandes.Niveaux
 {
     public class LireDetailDUnNiveauCmd : IRequest<NiveauDetailDto>
     {
-        public Guid Id { get; set; }
+        public Guid? Id { get; set; }
+        public Guid? NumeroExterne { get; set; }
     }
 }
