@@ -27,7 +27,7 @@ namespace Gie.Features.CommandHandlers.Etudiants
             if (resultatValidation.IsValid == false)
             {
                 reponse.Success = false;
-                reponse.Message = "Echec de Lajout dune Etudiant a la personne donc l'Id est notee dans le champs d'Id";
+                reponse.Message = "Echec de Lajout dun Etudiant";
                 reponse.Errors = resultatValidation.Errors.Select(q => q.ErrorMessage).ToList();
             }
             else
@@ -39,12 +39,12 @@ namespace Gie.Features.CommandHandlers.Etudiants
                 if (result == null)
                 {
                     reponse.Success = false;
-                    reponse.Message = "Echec de Lajout dune Etudiant a la personne donc l'Id est notee dans le champs d'Id";
+                    reponse.Message = "Echec de Lajout dun Etudiant ";
                 }
                 else
                 {
                     reponse.Success = true;
-                    reponse.Message = "Ajout de Personne Reussit";
+                    reponse.Message = "Ajout d Etudiant Reussit";
                     reponse.Id = result.Id;
                 }
             }

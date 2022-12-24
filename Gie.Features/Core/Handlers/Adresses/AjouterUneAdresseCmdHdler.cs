@@ -8,17 +8,17 @@ using Gie.Features.Commandes.Adresses;
 
 namespace Gie.Features.CommandHandlers.Adresses
 {
-    public class AjouterUneAdresseAUnEtudiantCmdHdler : IRequestHandler<AjouterUneAdresseAUnEtudiantCmd, ReponseDeRequette>
+    public class AjouterUneAdresseCmdHdler : IRequestHandler<AjouterUneAdresseCmd, ReponseDeRequette>
     {
         private readonly IPointDaccess _pointDaccess;
         private readonly IMapper _mapper;
 
-        public AjouterUneAdresseAUnEtudiantCmdHdler(IMapper mapper, IPointDaccess pointDaccess)
+        public AjouterUneAdresseCmdHdler(IMapper mapper, IPointDaccess pointDaccess)
         {
             _pointDaccess = pointDaccess;
             _mapper = mapper;
         }
-        public async Task<ReponseDeRequette> Handle(AjouterUneAdresseAUnEtudiantCmd request, CancellationToken cancellationToken)
+        public async Task<ReponseDeRequette> Handle(AjouterUneAdresseCmd request, CancellationToken cancellationToken)
         {            
             var reponse = new ReponseDeRequette();
             var validateur = new ValidateurDeLaCreationDadresseDto(_pointDaccess);
@@ -27,7 +27,7 @@ namespace Gie.Features.CommandHandlers.Adresses
             if(resultatValidation.IsValid == false)
             {
                 reponse.Success = false;
-                reponse.Message = "Echec de Lajout dune Adresse a la personne donc l'Id est notee dans le champs d'Id";
+                reponse.Message = "Echec de Lajout dune Adresse";
                 reponse.Errors = resultatValidation.Errors.Select(q => q.ErrorMessage).ToList();
             }
             else
@@ -39,12 +39,12 @@ namespace Gie.Features.CommandHandlers.Adresses
                 if (result == null)
                 {
                     reponse.Success = false;
-                    reponse.Message = "Echec de Lajout dune Adresse a la personne donc l'Id est notee dans le champs d'Id";
+                    reponse.Message = "Echec de Lajout dune Adresse ";
                 }
                 else
                 {
                     reponse.Success = true;
-                    reponse.Message = "Ajout de Personne Reussit";
+                    reponse.Message = "Ajout d adresse Reussit";
                     reponse.Id = result.Id;
                 }
             }

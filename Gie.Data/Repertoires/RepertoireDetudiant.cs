@@ -17,7 +17,9 @@ namespace Gie.Api.Repertoires
         public async Task<Etudiant> LireDetailDunEtudiant(Guid id)
         {
             var etudiant = await _context.Etudiants.Where(x => x.Id == id)
-                .Include(etd => etd.Adresses).FirstOrDefaultAsync();
+                .Include(etd => etd.Adresses).
+                Include(etd => etd.Niveau)
+                .SingleOrDefaultAsync();
 
             return etudiant;
         }

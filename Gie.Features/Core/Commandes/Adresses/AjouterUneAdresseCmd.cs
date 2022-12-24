@@ -4,7 +4,7 @@ using MsCommun.Reponses;
 
 namespace Gie.Features.Commandes.Adresses
 {
-    public class AjouterUneAdresseAUnEtudiantCmd : IRequest<ReponseDeRequette>
+    public class AjouterUneAdresseCmd : IRequest<ReponseDeRequette>
     {
         public AdresseACreerDto AdresseACreerDto { get; set; }
     }

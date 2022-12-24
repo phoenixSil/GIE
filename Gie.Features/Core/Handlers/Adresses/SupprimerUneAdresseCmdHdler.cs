@@ -8,14 +8,14 @@ using Gie.Features.Commandes.Adresses;
 
 namespace Gie.Features.CommandHandlers.Adresses
 {
-    public class SupprimerAdresseDunePersonneCmdHdler : IRequestHandler<SupprimerAdresseDunEtudiantCmd, ReponseDeRequette>
+    public class SupprimerUneAdresseCmdHdler : IRequestHandler<SupprimerUneAdresseCmd, ReponseDeRequette>
     {
         private readonly IPointDaccess _pointDAccess;
-        public SupprimerAdresseDunePersonneCmdHdler(IPointDaccess pointDAccess)
+        public SupprimerUneAdresseCmdHdler(IPointDaccess pointDAccess)
         {
             _pointDAccess = pointDAccess;
         }
-        public async Task<ReponseDeRequette> Handle(SupprimerAdresseDunEtudiantCmd request, CancellationToken cancellationToken)
+        public async Task<ReponseDeRequette> Handle(SupprimerUneAdresseCmd request, CancellationToken cancellationToken)
         {
             var response = new ReponseDeRequette();
 
