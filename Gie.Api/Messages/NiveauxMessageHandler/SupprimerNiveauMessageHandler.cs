@@ -1,10 +1,11 @@
 ﻿using AutoMapper;
-using Gie.Api.Dtos.Config.Niveaux;
+using Gie.Features.Dtos.Config.Niveaux;
 using Gie.Api.Messages.HandlersMessages;
-using Gie.Api.Services.Contrats;
+using Gie.Features.Contrats.Services;
 using MassTransit;
 using MsCommun.Messages.Niveaux;
 using MsCommun.Messages.Utils;
+using Microsoft.Extensions.Logging;
 
 namespace Gie.Api.Messages.NiveauxMessageHandler
 {

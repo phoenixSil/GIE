@@ -1,5 +1,4 @@
-using Gie.Api.Datas;
-using Gie.Api.Extensions;
+using Gie.InjectionDeDependance;
 using MsCommun.Extensions;
 using Serilog;
 
@@ -20,10 +19,7 @@ builder.Host.UseSerilog((ctx, lc) => lc.WriteTo.Console().ReadFrom.Configuration
 
 //Add services to the container.
 
-builder.Services.AddSqlServerDbConfiguration<EtudiantDbContext>(builder.Configuration);
-builder.Services.ConfigureApplicationServices();
-builder.Services.ConfigureControllerServices();
-builder.Services.ConfigurePersistenceServices(builder.Configuration);
+builder.Services.AjoutDeToutesLesExtensions(builder.Configuration);
 builder.Services.AddConfigurationMassTransitWithRabbitMQ(builder.Configuration);
 
 // Add services to the container.

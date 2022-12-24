@@ -1,5 +1,5 @@
-﻿using Gie.Api.Dtos.Config.Niveaux;
-using Gie.Api.Services.Contrats;
+﻿using Gie.Features.Dtos.Config.Niveaux;
+using Gie.Features.Contrats.Services;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
