@@ -1,6 +1,6 @@
-﻿using Gie.Api.Dtos.Etudiants;
+﻿using Gie.Features.Dtos.Etudiants;
 using MsCommun.Reponses;
-using Gie.Api.Services.Contrats;
+using Gie.Features.Contrats.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Gie.Api.Controllers

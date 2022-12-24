@@ -1,9 +1,9 @@
-﻿using Gie.Api.Dtos.Adresses;
-using Gie.Api.DTOs.Adresses;
-using MsCommun.Reponses;
-using Gie.Api.Services.Contrats;
+﻿using MsCommun.Reponses;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Gie.Features.Contrats.Services;
+using Gie.Features.Dtos.Adresses;
+using Gie.Features.DTOs.Adresses;
 
 namespace Gie.Api.Controllers
 {
