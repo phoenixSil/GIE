@@ -20,7 +20,7 @@ namespace Gie.Api.Controllers
 
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public async Task<ActionResult<ReponseDeRequette>> AjouterUneAdresseAUnePersonne(AdresseACreerDto adresseACreerDto)
+        public async Task<ActionResult<ReponseDeRequette>> AjouterAdresse(AdresseACreerDto adresseACreerDto)
         {
             var result = await _service.AjouterUneAdresseAUnEtudiant(adresseACreerDto);
             return Ok(result);
@@ -30,7 +30,7 @@ namespace Gie.Api.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<ActionResult<ReponseDeRequette>> ModifierAdresseDunePersonne(Guid adresseId, AdresseAModifierDto adresseAModifierDto)
+        public async Task<ActionResult<ReponseDeRequette>> ModifierUneAdresse(Guid adresseId, AdresseAModifierDto adresseAModifierDto)
         {
             var resultat = await _service.ModifierAdresseDunEtudiant(adresseId, adresseAModifierDto);
             return Ok(resultat);
@@ -40,22 +40,9 @@ namespace Gie.Api.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<ActionResult<AdresseDetailDto>> LireAdresseDunePersonne(Guid adresseId)
+        public async Task<ActionResult<AdresseDetailDto>> LireDetailDUneAdresse(Guid adresseId)
         {
             var resultat = await _service.LireAdresseUniqueDunEtudiant(adresseId);
-            return Ok(resultat);
-        }
-
-        [HttpGet("/personne/{personneId}")]
-        [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status404NotFound)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(StatusCodes.Status204NoContent)]
-        public async Task<ActionResult<List<AdresseDto>>> LireToutesLesAdresseDunePersonne(Guid personneId)
-        {
-            var resultat = await _service.LireToutesLesAdresseDunEtudiant(personneId);
-            if (resultat.Count == 0 || resultat == null)
-                return NoContent();
             return Ok(resultat);
         }
 
@@ -69,13 +56,5 @@ namespace Gie.Api.Controllers
             return Ok(resultat);
         }
 
-        [HttpPost("/personne/{personneId}")]
-        [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<ActionResult<List<ReponseDeRequette>>> AjoutterListDadresseAUnePersonne(List<AdresseACreerDto> listAdressedto)
-        {
-            var resultat = await _service.AjouterUneListeDAdresseAUnEtudiant(listAdressedto);
-            return Ok(resultat);
-        }
     }
 }

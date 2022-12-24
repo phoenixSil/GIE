@@ -21,7 +21,7 @@ namespace Gie.Features.Services
 
         public async Task<ReponseDeRequette> AjouterUneAdresseAUnEtudiant(AdresseACreerDto adresseDto)
         {
-            var response = await _mediator.Send(new AjouterUneAdresseAUnEtudiantCmd { AdresseACreerDto = adresseDto });
+            var response = await _mediator.Send(new AjouterUneAdresseCmd { AdresseACreerDto = adresseDto });
             return response;
         }
 
@@ -39,26 +39,26 @@ namespace Gie.Features.Services
 
         public async Task<AdresseDetailDto> LireAdresseUniqueDunEtudiant(Guid adresseId)
         {
-            var response = await _mediator.Send(new LireAdresseUniqueDunEtudiantCmd { AdresseId = adresseId });
+            var response = await _mediator.Send(new LireDetailDuneAdresseCmd { AdresseId = adresseId });
             return response;
         }
 
         public async Task<List<AdresseDto>> LireToutesLesAdresseDunEtudiant(Guid personneId)
         {
-            var response = await _mediator.Send(new LireToutesLesAdressesDunEtudiantCmd { PersonneId = personneId });
+            var response = await _mediator.Send(new LireToutesLesAdressesCmd { PersonneId = personneId });
             return response;
         }
 
         public async Task<ReponseDeRequette> ModifierAdresseDunEtudiant(Guid adresseId, AdresseAModifierDto adresseDto)
         {
-            var response = await _mediator.Send(new ModifierAdresseDunEtudiantCmd { AdresseId = adresseId, AdresseAModifierDto = adresseDto });
+            var response = await _mediator.Send(new ModifierUneAdresseCmd { AdresseId = adresseId, AdresseAModifierDto = adresseDto });
             return response;
         }
 
 
         public async Task<ReponseDeRequette> SupprimerAdresseDunEtudiant(Guid adresseId)
         {
-            var response = await _mediator.Send(new SupprimerAdresseDunEtudiantCmd { AdresseId = adresseId });
+            var response = await _mediator.Send(new SupprimerUneAdresseCmd { AdresseId = adresseId });
             return response;
         }
     }

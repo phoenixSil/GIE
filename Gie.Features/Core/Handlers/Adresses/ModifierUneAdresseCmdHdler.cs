@@ -9,19 +9,19 @@ using Gie.Features.Commandes.Adresses;
 
 namespace Gie.Features.CommandHandlers.Adresses
 {
-    public class ModifierAdresseDunEtudiantCmdHdler : IRequestHandler<ModifierAdresseDunEtudiantCmd, ReponseDeRequette>
+    public class ModifierUneAdresseCmdHdler : IRequestHandler<ModifierUneAdresseCmd, ReponseDeRequette>
     {
         private readonly IPointDaccess _pointDaccess;
         private readonly IMediator _mediator;
         private readonly IMapper _mapper;
-        public ModifierAdresseDunEtudiantCmdHdler(IPointDaccess pointDaccess, IMediator mediator, IMapper mapper)
+        public ModifierUneAdresseCmdHdler(IPointDaccess pointDaccess, IMediator mediator, IMapper mapper)
         {
             _pointDaccess = pointDaccess;
             _mediator = mediator;
             _mapper = mapper;
         }
 
-        public async Task<ReponseDeRequette> Handle(ModifierAdresseDunEtudiantCmd request, CancellationToken cancellationToken)
+        public async Task<ReponseDeRequette> Handle(ModifierUneAdresseCmd request, CancellationToken cancellationToken)
         {
 
             var adresse = await _pointDaccess.RepertoireDadresse.Lire(request.AdresseId);

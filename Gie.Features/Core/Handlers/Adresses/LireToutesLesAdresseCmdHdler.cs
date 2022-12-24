@@ -9,18 +9,18 @@ using Gie.Features.Dtos.Adresses;
 
 namespace Gie.Features.CommandHandlers.Adresses
 {
-    public class LireToutesLesAdressesDunEtudiantCmdHdler : IRequestHandler<LireToutesLesAdressesDunEtudiantCmd, List<AdresseDto>>
+    public class LireToutesLesAdresseCmdHdler : IRequestHandler<LireToutesLesAdressesCmd, List<AdresseDto>>
     {
         private readonly IPointDaccess _pointDaccess;
         private readonly IMapper _mapper;
 
-        public LireToutesLesAdressesDunEtudiantCmdHdler(IPointDaccess pointDaccess, IMapper mapper)
+        public LireToutesLesAdresseCmdHdler(IPointDaccess pointDaccess, IMapper mapper)
         {
             _pointDaccess = pointDaccess;
             _mapper = mapper;
         }
 
-        public async Task<List<AdresseDto>> Handle(LireToutesLesAdressesDunEtudiantCmd request, CancellationToken cancellationToken)
+        public async Task<List<AdresseDto>> Handle(LireToutesLesAdressesCmd request, CancellationToken cancellationToken)
         {
             var personne = await _pointDaccess.RepertoireDetudiant.Lire(request.PersonneId);
 
