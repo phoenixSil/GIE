@@ -42,7 +42,6 @@ namespace Gie.Features.CommandHandlers.Niveaux
                 var niveauACreer = _mapper.Map<Niveau>(request.NiveauAAjouterDto);
                 niveauACreer.Id = Guid.NewGuid();
                 var result = await _pointDaccess.RepertoireDeNiveau.Ajoutter(niveauACreer);
-                await _pointDaccess.Enregistrer();
 
                 if (result is null)
                 {

@@ -30,7 +30,16 @@ namespace Gie.Api.Messages.NiveauxMessageHandler
                 if (niveauMessage.Type == TypeMessage.SUPPRESSION)
                 {
                     NiveauDetailDto niveau = await _service.LireNiveauParNumeroExterne(niveauMessage.NumeroExterne);
-                    await _service.SupprimerUnNiveau(niveau.Id).ConfigureAwait(false);
+
+                    if(niveau is null)
+                    {
+                        _logger.LogWarning("le Niveau nexiste pas dans la base de donnee ");
+                    } else
+                    {
+                        _logger.LogInformation("On a trouver le niveau dans Gie ");
+                        await _service.SupprimerUnNiveau(niveau.Id).ConfigureAwait(false);
+                    }
+                    
                 }
             }
         }
