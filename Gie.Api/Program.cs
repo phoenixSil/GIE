@@ -1,3 +1,4 @@
+using Gie.Data;
 using Gie.InjectionDeDependance;
 using MsCommun.Extensions;
 using Serilog;

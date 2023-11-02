@@ -22,5 +22,5 @@ namespace Gie.Data.Extensions
 
             return services;
         }
-    }
+    } 
 }
